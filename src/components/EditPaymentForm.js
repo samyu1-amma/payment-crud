@@ -18,11 +18,11 @@ export default function EditPaymentForm(props){
 
    
 
-     return (<div>
+     return (
         <form onSubmit={submitHandler}>
          
 <label>Id</label>
-<h1>{props.currentPayment.paymentid}</h1>
+<h1>{props.currentPayment.paymentId}</h1>
  
 <label>BookingId</label>
 <input 
@@ -33,7 +33,10 @@ onChange={handleInputChange}/><br></br>
 <br></br>
 
 <label>PaymentMode</label>
-<select name="paymentMode" id="paymentMode">
+<select name="paymentMode" id="paymentMode" value={payment.paymentMode}
+onChange={handleInputChange}
+>
+
     <option value="Card">Card</option>
     <option value="Cash">Cash</option>
    
@@ -64,7 +67,7 @@ onChange={handleInputChange}/><br></br>
 <button onClick={()=>props.setEditing(false)} 
 className="button muted-button">Cancel</button></form>
 
-</div>
+
    )
 
 

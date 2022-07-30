@@ -27,11 +27,11 @@ const initialBookingFormState = {
 }
 
 const[booking, setBooking] = useState(initialBookingFormState);
-const handlebookingIdChange=(event)=>{
+const handleBookingIdChange=(event)=>{
  const{name,value}=event.target;
  setBooking({...booking,[name]:value});
  setPayment({...payment,...booking});
-console.log(JSON.stringify(payment))
+
 
 }
  
@@ -86,7 +86,7 @@ const submitHandler=(event)=>{event.preventDefault();
    }
 
 
-return (<div>
+return (<>
 
    <form onSubmit={submitHandler}>
 
@@ -98,7 +98,7 @@ return (<div>
 type='number'
 name='bookingId'
 value={booking.bookingId}
-onChange={handlebookingIdChange}/><br></br>
+onChange={handleBookingIdChange}/><br></br>
 <br></br>
 
 <label>PaymentId</label>
@@ -142,8 +142,8 @@ onChange={handleInputChange}/><br></br>
 
 </form>
 
+</>
 
-</div>
 )
 
 

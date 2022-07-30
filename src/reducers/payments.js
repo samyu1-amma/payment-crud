@@ -9,7 +9,7 @@ import {
     
     from "../actions/types";
     const initialState = [];
-    function paymentReducer( payments = initialState, action) {
+    function paymentReducer(payments = initialState, action) {
       const { type, payload } = action;
       switch (type) {
         case ADD_PAYMENT:

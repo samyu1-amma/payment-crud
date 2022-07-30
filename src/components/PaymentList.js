@@ -58,7 +58,7 @@ return(
   {payments?.length > 0 ? (
     payments.map((payment)=>(
     <tr key={payment.paymentId}>
-        <td>{payment.bookingId}</td>
+        <td>{payment.booking?.bookingId}</td>
         <td>{payment.paymentId}</td>
         <td>{payment.paymentMode}</td>
         <td>{payment.paymentDate}</td>
@@ -68,7 +68,7 @@ return(
          onClick={()=>{props.editPayment(payment)}}
         className="button muted-button">Edit</button></td>
         <td><button 
-        onClick={()=>props.deletePayment(payment.id)}
+        onClick={()=>props.deletePayment(payment.paymentId)}
         className="button muted-button">Delete</button></td>
         
      </tr>))):(

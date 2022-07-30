@@ -58,7 +58,7 @@ async function deletePayment(id){
     setEditing(true);
       setCurrentPayment
       ({paymentId:payment.paymentId,bookingId:payment.bookingId,paymentMode:payment.paymentMode,
-        paymentdate:payment.paymentdate,paymentstatus:payment.paymentstatus})
+        paymentDate:payment.paymentDate,paymentStatus:payment.paymentStatus})
      
   }
    
@@ -127,7 +127,7 @@ async function deletePayment(id){
           
 
          </Route>
-         { <Route path="/updatePayment/:id" element={<EditPaymentForm /> }></Route> }
+          <Route path="/updatePayment/:id" element={<EditPaymentForm /> }></Route> 
         </Routes> 
       </div>
     

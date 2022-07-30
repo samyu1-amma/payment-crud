@@ -14,12 +14,12 @@ import  PaymentService from "../services/PaymentService";
 // when we  bindActionCreators -- destructured object of diff vars and functions and to that we are tying the dispatch
 //useDispatch hook , which will give us the constant of dispatch
 
-export const addPayment = (paymentId,paymentMode,paymentDate,paymentStatus,bookingId) => async (dispatch) => {
+export const addPayment = ({paymentId,paymentMode,paymentDate,paymentStatus,booking}) => async (dispatch) => {
   try {
     //first the call to back end server is happening
     //data of product type and we receive server response
 
-    const res = await PaymentService.create({ paymentId,paymentMode,paymentDate,paymentStatus,bookingId});
+    const res = await PaymentService.create({ paymentId,paymentMode,paymentDate,paymentStatus,booking});
     dispatch({
       type: ADD_PAYMENT,
       payload: res.data,
